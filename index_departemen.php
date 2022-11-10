@@ -43,16 +43,10 @@
 <body>
 
   <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
+<?php
+include('header.php');
 
-      <div class="d-flex align-items-center justify-content-between">
-        <a href="index_departemen.php" class="logo d-flex align-items-center">
-            <img src="assets/img/lomsiap.png" alt="">
-            <span class="d-none d-lg-block">LomSIAP</span>
-        </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-    </header><!-- End Header -->
+?>
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
