@@ -1,5 +1,9 @@
 <!doctype html>
 <html lang="en">
+  <?php
+  session_start();
+  require_once('koneksi.php')
+  ?>
 
 <head>
   <meta charset="utf-8">

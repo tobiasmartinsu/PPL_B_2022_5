@@ -1,6 +1,7 @@
 <?php
 
 require_once('koneksi.php');
+require_once('function_foto.php');
 
 
 session_start();
@@ -25,8 +26,11 @@ if ($result->num_rows > 0) {
     $nim = $row['nim'];
     $angkatan = $row['angkatan'];
     $alamat = $row['alamat'];
+    $provinsi = $row['provinsi'];
+    $kota = $row['kota'];
     $phone = $row['phone'];
     $email = $row['email'];
+    $foto = $row['foto'];
   }
 }
 
@@ -36,11 +40,14 @@ if ($result->num_rows > 0) {
 <?php
 if ($_POST) {
   $alamat = $_POST['alamat'];
+  $provinsi = $_POST['provinsi'];
+  $kota = $_POST['kota'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
+  $foto = foto();
 
 
-  $query = "UPDATE data_mahasiswa SET alamat = '$alamat', phone = '$phone', email = '$email' WHERE nim = '$nim'";
+  $query = "UPDATE data_mahasiswa SET alamat = '$alamat', provinsi = '$provinsi', kota = '$kota', phone = '$phone', email = '$email', foto = '$foto' WHERE nim = '$nim'";
   $result = $koneksi->query($query);
 }
 
@@ -106,7 +113,7 @@ if ($_POST) {
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+              <img src="data_foto_user/<?=$foto?>" alt="Profile" class="rounded-circle">
               <h2><?= $_SESSION['nama_lengkap'] ?></h2>
               <h3><?= $_SESSION['level'] ?> </h3>
               <span class="text-success small pt-1 fw-bold"><?= $status ?></span><span class="text-muted small pt-2 ps-1"> <?= $_SESSION['nimnip'] ?></span>
@@ -131,9 +138,9 @@ if ($_POST) {
                 </li>
 
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
-                </li>
+                </li> -->
 
               </ul>
               <div class="tab-content pt-2">
@@ -168,6 +175,15 @@ if ($_POST) {
                   </div>
 
                   <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Provinsi</div>
+                    <div class="col-lg-9 col-md-8" name = 'provinsi'><?= $provinsi ?></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Kota/Kabupaten</div>
+                    <div class="col-lg-9 col-md-8" name = 'kota'><?= $kota ?></div>
+                  </div>
+                  <div class="row">
                     <div class="col-lg-3 col-md-4 label">Phone</div>
                     <div class="col-lg-9 col-md-8" name='phone'><?= $phone ?></div>
                   </div>
@@ -186,11 +202,10 @@ if ($_POST) {
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Foto Profil</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/profile-img.jpg" alt="Profile">
-                        <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                        </div>
+                        <img src="data_foto_user/<?=$foto?>" alt="Profile">
+                        <div class="col-sm-10">
+                              <input class="form-control" type="file" id="foto" name="foto">
+                            </div>
                       </div>
                     </div>
 
@@ -221,6 +236,20 @@ if ($_POST) {
                       <label for="alamat" class="col-md-4 col-lg-3 col-form-label">Alamat</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="alamat" type="text" class="form-control" id="alamat" value="<?= $alamat ?>">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="provinsi" class="col-md-4 col-lg-3 col-form-label">Provinsi</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="provinsi" type="text" class="form-control" id="provinsi" value="<?= $provinsi ?>">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="kota" class="col-md-4 col-lg-3 col-form-label">Kota/Kabupaten</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="kota" type="text" class="form-control" id="kota" value="<?= $kota ?>">
                       </div>
                     </div>
 

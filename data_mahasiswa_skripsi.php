@@ -1,5 +1,6 @@
 <?php
   require_once('koneksi.php');
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,10 +43,76 @@
 </head>
 <body>
   <!-- ======= Header ======= -->
-  <?php
-include('header.php');
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-?>
+<div class="d-flex align-items-center justify-content-between">
+  <a href="index_admin.php" class="logo d-flex align-items-center">
+    <img src="assets/img/lomsiap.png" alt="">
+    <span class="d-none d-lg-block">LomSIAP</span>
+  </a>
+  <i class="bi bi-list toggle-sidebar-btn"></i>
+</div><!-- End Logo -->
+</div><!-- End Logo -->
+
+
+
+<nav class="header-nav ms-auto">
+  <ul class="d-flex align-items-center">
+
+
+    <li class="nav-item dropdown pe-3">
+
+      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+        <span class="d-none d-md-block dropdown-toggle ps-2"><?= $_SESSION['nama_lengkap'] ?></span>
+      </a><!-- End Profile Iamge Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" style="">
+        <li class="dropdown-header">
+          <h6><?= $_SESSION['nama_lengkap'] ?></h6>
+          <span><?= $_SESSION['level'] ?></span>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="profile_admin.html">
+            <i class="bi bi-person"></i>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="logout.php">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Log Out</span>
+          </a>
+        </li>
+
+      </ul><!-- End Profile Dropdown Items -->
+    </li><!-- End Profile Nav -->
+
+  </ul>
+</nav><!-- End Icons Navigation -->
+</header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -53,14 +120,14 @@ include('header.php');
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index_departemen.php  ">
+        <a class="nav-link collapsed" href="index_dosen.php  ">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data_mahasiswa.php">
+        <a class="nav-link collapsed" href="data_mahasiswa_dosen.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa</span>
         </a>
@@ -72,7 +139,7 @@ include('header.php');
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link " href="data_mahasiswa_skripsi.php">
+        <a class="nav-link collapsed" href="data_mahasiswa_skripsi.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa Skripsi</span>
         </a>

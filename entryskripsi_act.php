@@ -150,7 +150,7 @@ if ($_POST) {
                             <label class="form-label" for="">Upload Scan Skripsi</label><br>
                             <div class="col-sm-10">
                               <input class="form-control" type="file" id="upload_file" name="upload_file">
-                            </div>
+                            </div> 
                           </div>
                           </br>
                           <button class="btn btn-primary" type="submit">Save</button>

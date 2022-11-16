@@ -40,10 +40,114 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <?php include('header.php'); ?>
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index_admin.php" class="logo d-flex align-items-center">
+          <img src="assets/img/lomsiap.png" alt="">
+          <span class="d-none d-lg-block">LomSIAP</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+  </div><!-- End Logo -->
+    </div><!-- End Logo -->
+
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2"><?= $_SESSION['nama_lengkap']?></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" style="">
+            <li class="dropdown-header">
+              <h6><?= $_SESSION['nama_lengkap']?></h6>
+              <span><?= $_SESSION['level']?></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="profile_admin.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="logout.php">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Log Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+  </header><!-- End Header -->
+
 
   <!-- ======= Sidebar ======= -->
-  <?php include('sidebar.php'); ?>
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="index_admin.php">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="manajemen_akun_mahasiswa.php">
+          <i class="bi bi-grid"></i>
+          <span>Verifikasi Akun</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="data.php">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Data</span>
+        </a>
+      </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="logout.php">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Logout</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -65,14 +169,14 @@
 
 
                 <div class="card-body">
-                  <h5 class="card-title"><?=$_SESSION['nama_lengkap']?></h5>
+                  <h5 class="card-title"><?= $_SESSION['nama_lengkap']?></h5>
 
                   <div class="d-flex align-items-center">
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                       <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
                       <div class="ps-3">
-                        <h4>Admin</h4>
-                        <span class="text-success small pt-1 fw-bold">Aktif</span> <span class="text-muted small pt-2 ps-1">|| <?=$_SESSION['nimnip']?></span>
+                        <h4><?= $_SESSION['level']?></h4>
+                        <span class="text-success small pt-1 fw-bold">Aktif</span> <span class="text-muted small pt-2 ps-1">|| NIP : <?= $_SESSION['nimnip']?></span>
 
                       </div>
                     </a>
@@ -218,8 +322,18 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <!-- include footer  -->
-  <?php include('footer.php'); ?>
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      © Copyright <strong><span>LomSiap</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

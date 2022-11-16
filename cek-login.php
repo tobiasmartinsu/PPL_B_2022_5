@@ -36,7 +36,7 @@ if ($user_valid) {
         elseif($level == 'Departemen'){
             echo "<script>window.location.href='index_departemen.php';</script>";
         }
-        elseif($level == 'dosen'){
+        elseif($level == 'Dosen'){
             echo "<script>window.location.href='index_dosen.php';</script>";
         }
 
