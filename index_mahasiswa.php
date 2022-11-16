@@ -44,7 +44,7 @@ if ($_POST) {
   $kota = $_POST['kota'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
-  $foto = foto();
+  // $foto = foto();
 
 
   $query = "UPDATE data_mahasiswa SET alamat = '$alamat', provinsi = '$provinsi', kota = '$kota', phone = '$phone', email = '$email', foto = '$foto' WHERE nim = '$nim'";
