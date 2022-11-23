@@ -30,7 +30,7 @@ if ($_POST) {
   $sks_kumulatif = $_POST['sks_kumulatif'];
   $upload_file = upload();
 
-  $query = "INSERT INTO data_irs ( nim, semester, sks_semester, sks_kumulatif, upload_file) VALUES ('" . $nim . "', '" . $semester . "', '" . $sks_semester . "', '" . $sks_kumulatif . "', '" . $upload_file . "')";
+  $query = "INSERT INTO data_irs ( nim, nama, semester, sks_semester, sks_kumulatif, upload_file) VALUES ('" . $nim . "','" .$nama . "', '" . $semester . "', '" . $sks_semester . "', '" . $sks_kumulatif . "', '" . $upload_file . "')";
   $result = $koneksi->query($query);
   if (!$result) {
     die("Could not query the database: <br />" . $koneksi->error);

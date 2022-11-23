@@ -33,7 +33,7 @@ if ($_POST) {
   $ip_kumulatif = $_POST['ip_kumulatif'];
   $upload_file = upload();
 
-  $query = "INSERT INTO data_khs ( nim, semester, sks_semester, sks_kumulatif, ip_semester, ip_kumulatif, upload_file) VALUES ('" . $nim . "', '" . $semester . "', '" . $sks_semester . "', '" . $sks_kumulatif . "', '" . $ip_semester . "', '" . $ip_kumulatif . "','" . $upload_file . "')";
+  $query = "INSERT INTO data_khs ( nim, nama, semester, sks_semester, sks_kumulatif, ip_semester, ip_kumulatif, upload_file) VALUES ('" . $nim . "', '" . $nama . "', '" . $semester . "', '" . $sks_semester . "', '" . $sks_kumulatif . "', '" . $ip_semester . "', '" . $ip_kumulatif . "','" . $upload_file . "')";
   $result = $koneksi->query($query);
   if (!$result) {
     die("Could not query the database: <br />" . $koneksi->error);

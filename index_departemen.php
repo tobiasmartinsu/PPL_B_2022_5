@@ -144,6 +144,12 @@
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
+        <a class="nav-link collapsed" href="progress_mahasiswa_skripsi.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa</span>
+        </a>
+      </li><!-- End Tables Nav -->
+      <li class="nav-item">
         <a class="nav-link collapsed" href="logout.php">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>

@@ -120,7 +120,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index_departemen.php  ">
+        <a class="nav-link collapsed" href="index_admin.php  ">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -139,11 +139,33 @@
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data_mahasiswa_skripsi.php">
+        <a class="nav-link collapsed " href="data_mahasiswa_skripsi.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa Skripsi</span>
         </a>
       </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="progress_mahasiswa_irs.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa IRS</span>
+        </a>
+      </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="progress_mahasiswa_khs.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa KHS</span>
+        </a>
+        <li class="nav-item">
+        <a class="nav-link collapsed " href="progress_mahasiswa_skripsi.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa Skripsi</span>
+        </a>
+      </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="progress_mahasiswa_pkl.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa PKL</span>
+        </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="logout.php">
