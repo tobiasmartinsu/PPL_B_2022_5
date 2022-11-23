@@ -7,9 +7,6 @@ require_once('function_foto.php');
 session_start();
 
 
-if (!isset($_SESSION['nimnip'])) {
-  header("Location : login.php");
-}
 
 $nim = $_SESSION['nimnip'];
 
@@ -38,16 +35,17 @@ if ($result->num_rows > 0) {
 
 
 <?php
+
 if ($_POST) {
   $alamat = $_POST['alamat'];
   $provinsi = $_POST['provinsi'];
   $kota = $_POST['kota'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
-  // $foto = foto();
+  $foto = foto();
 
 
-  $query = "UPDATE data_mahasiswa SET alamat = '$alamat', provinsi = '$provinsi', kota = '$kota', phone = '$phone', email = '$email', foto = '$foto' WHERE nim = '$nim'";
+  $query = "UPDATE data_mahasiswa SET alamat = '" . $alamat . "', provinsi = '" . $provinsi . "', kota = '" . $kota . "', phone = '" . $phone . "', email = '" . $email . "', foto = '" . $foto . "' WHERE nim = '" . $nim . "'";
   $result = $koneksi->query($query);
 }
 
@@ -113,7 +111,7 @@ if ($_POST) {
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="data_foto_user/<?=$foto?>" alt="Profile" class="rounded-circle">
+              <img src="data_foto_user/<?= $foto ?>" alt="Profile" class="rounded-circle">
               <h2><?= $_SESSION['nama_lengkap'] ?></h2>
               <h3><?= $_SESSION['level'] ?> </h3>
               <span class="text-success small pt-1 fw-bold"><?= $status ?></span><span class="text-muted small pt-2 ps-1"> <?= $_SESSION['nimnip'] ?></span>
@@ -176,12 +174,12 @@ if ($_POST) {
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Provinsi</div>
-                    <div class="col-lg-9 col-md-8" name = 'provinsi'><?= $provinsi ?></div>
+                    <div class="col-lg-9 col-md-8" name='provinsi'><?= $provinsi ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Kota/Kabupaten</div>
-                    <div class="col-lg-9 col-md-8" name = 'kota'><?= $kota ?></div>
+                    <div class="col-lg-9 col-md-8" name='kota'><?= $kota ?></div>
                   </div>
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Phone</div>
@@ -198,36 +196,36 @@ if ($_POST) {
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form method="POST" action="" enctype="multipart/form-data">
+                  <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?nim=' . $nim; ?>" enctype="multipart/form-data">
                     <div class="row mb-3">
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Foto Profil</label>
+                      <label for="foto" class="col-md-4 col-lg-3 col-form-label">Foto Profil</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="data_foto_user/<?=$foto?>" alt="Profile">
+                        <img src="data_foto_user/<?= $foto ?>" alt="Profile">
                         <div class="col-sm-10">
-                              <input class="form-control" type="file" id="foto" name="foto">
-                            </div>
+                          <input class="form-control" type="file" id="foto" name="foto">
+                        </div>
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nama Lengkap</label>
+                      <label for="nama" class="col-md-4 col-lg-3 col-form-label">Nama Lengkap</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="<?= $nama ?>">
+                        <input name="nama" type="text" class="form-control" id="nama" value="<?= $nama ?>">
                       </div>
                     </div>
 
 
                     <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">NIM</label>
+                      <label for="nim" class="col-md-4 col-lg-3 col-form-label">NIM</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="<?= $nim ?>">
+                        <input name="nim" type="text" class="form-control" id="nim" value="<?= $nim ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Angkatan</label>
+                      <label for="angkatan" class="col-md-4 col-lg-3 col-form-label">Angkatan</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="<?= $angkatan ?>">
+                        <input name="angkatan" type="text" class="form-control" id="angkatan" value="<?= $angkatan ?>">
                       </div>
                     </div>
 
@@ -254,16 +252,16 @@ if ($_POST) {
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <label for="phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" value="<?= $phone ?>">
+                        <input name="phone" type="text" class="form-control" id="phone" value="<?= $phone ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="<?= $email ?>">
+                        <input name="email" type="email" class="form-control" id="email" value="<?= $email ?>">
                       </div>
                     </div>
 
