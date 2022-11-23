@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 01:14 PM
+-- Generation Time: Nov 23, 2022 at 02:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -107,6 +107,7 @@ INSERT INTO `data_dosen` (`nip`, `nama`) VALUES
 
 CREATE TABLE `data_irs` (
   `nim` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `semester` varchar(255) NOT NULL,
   `sks_semester` varchar(255) NOT NULL,
   `sks_kumulatif` varchar(255) NOT NULL,
@@ -117,13 +118,10 @@ CREATE TABLE `data_irs` (
 -- Dumping data for table `data_irs`
 --
 
-INSERT INTO `data_irs` (`nim`, `semester`, `sks_semester`, `sks_kumulatif`, `upload_file`) VALUES
-('24060120140040', '1', '19', '21', ''),
-('24060120140040', '2', '20', '41', ''),
-('24060120140040', '3', '18', '21', ''),
-('24060120140049', '1', '21', '21', ''),
-('24060120140049', '2', '24', '45', ''),
-('24060120140049', '3', '21', '61', '');
+INSERT INTO `data_irs` (`nim`, `nama`, `semester`, `sks_semester`, `sks_kumulatif`, `upload_file`) VALUES
+('24060120140040', 'Tobias Martin Suena', '1', '18', '18', ''),
+('24060120140040', 'Tobias Martin Suena', '2', '21', '39', ''),
+('24060120140049', 'Angelica Debby Frandina', '1', '18', '18', '');
 
 -- --------------------------------------------------------
 
@@ -133,6 +131,7 @@ INSERT INTO `data_irs` (`nim`, `semester`, `sks_semester`, `sks_kumulatif`, `upl
 
 CREATE TABLE `data_khs` (
   `nim` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `semester` varchar(10) NOT NULL,
   `sks_semester` varchar(10) NOT NULL,
   `sks_kumulatif` varchar(10) NOT NULL,
@@ -145,13 +144,8 @@ CREATE TABLE `data_khs` (
 -- Dumping data for table `data_khs`
 --
 
-INSERT INTO `data_khs` (`nim`, `semester`, `sks_semester`, `sks_kumulatif`, `ip_semester`, `ip_kumulatif`, `upload_file`) VALUES
-('24060120120002', '2', '21', '21', '3.5', '3.5', ''),
-('24060120120002', '3', '21', '21', '3.5', '3.5', ''),
-('24060120120002', '4', '21', '21', '3.5', '3.5', ''),
-('24060120140040', '1', '20', '21', '3.3', '3.3', ''),
-('24060120140040', '2', '21', '21', '3.5', '3.5', ''),
-('24060120140049', '1', '21', '21', '3.7', '3.7', 0x4952532e706466);
+INSERT INTO `data_khs` (`nim`, `nama`, `semester`, `sks_semester`, `sks_kumulatif`, `ip_semester`, `ip_kumulatif`, `upload_file`) VALUES
+('24060120140049', 'Angelica Debby Frandina', '1', '21', '21', '3.5', '3.5', '');
 
 -- --------------------------------------------------------
 
@@ -435,6 +429,7 @@ INSERT INTO `data_mahasiswa_skripsi` (`nim`, `tahun`, `nama`, `status`, `nilai`,
 
 CREATE TABLE `data_pkl` (
   `nim` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `semester` varchar(10) NOT NULL,
   `status_pkl` varchar(255) NOT NULL,
   `nilai_pkl` varchar(255) NOT NULL,
@@ -446,8 +441,8 @@ CREATE TABLE `data_pkl` (
 -- Dumping data for table `data_pkl`
 --
 
-INSERT INTO `data_pkl` (`nim`, `semester`, `status_pkl`, `nilai_pkl`, `dosen_pembimbing`, `upload_file`) VALUES
-('24060120140040', '11', 'LULUS', 'B', 'Drs. Eko Adi Sarwoko, M.Kom.', '');
+INSERT INTO `data_pkl` (`nim`, `nama`, `semester`, `status_pkl`, `nilai_pkl`, `dosen_pembimbing`, `upload_file`) VALUES
+('24060120140049', 'Angelica Debby Frandina', '6', 'LULUS', 'A', 'Drs. Eko Adi Sarwoko, M.Kom.', '');
 
 -- --------------------------------------------------------
 
@@ -457,6 +452,7 @@ INSERT INTO `data_pkl` (`nim`, `semester`, `status_pkl`, `nilai_pkl`, `dosen_pem
 
 CREATE TABLE `data_skripsi` (
   `nim` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `semester` varchar(255) NOT NULL,
   `status_skripsi` varchar(255) NOT NULL,
   `nilai_skripsi` varchar(255) NOT NULL,
@@ -469,8 +465,8 @@ CREATE TABLE `data_skripsi` (
 -- Dumping data for table `data_skripsi`
 --
 
-INSERT INTO `data_skripsi` (`nim`, `semester`, `status_skripsi`, `nilai_skripsi`, `lama_studi`, `tanggal_sidang`, `upload_file`) VALUES
-('24060120140040', '10', 'LULUS', 'A', '10', '13/12/2019', '');
+INSERT INTO `data_skripsi` (`nim`, `nama`, `semester`, `status_skripsi`, `nilai_skripsi`, `lama_studi`, `tanggal_sidang`, `upload_file`) VALUES
+('24060120140049', 'Angelica Debby Frandina', '10', 'LULUS', 'A', '10', '12/12/2019', '');
 
 -- --------------------------------------------------------
 
