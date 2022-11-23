@@ -1,9 +1,6 @@
 <?php
-
+require_once('koneksi.php');
 session_start();
-
-require_once("BEindex_dosen.php");
-require_once("koneksi.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,10 +32,15 @@ require_once("koneksi.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -110,13 +112,14 @@ require_once("koneksi.php");
       </ul>
     </nav><!-- End Icons Navigation -->
   </header><!-- End Header -->
+
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" href="index_dosen.php">
+        <a class="nav-link collapsed" href="index_dosen.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -157,7 +160,7 @@ require_once("koneksi.php");
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="progress_mahasiswa_pkl_dosen.php">
+        <a class="nav-link " href="progress_mahasiswa_pkl_dosen.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Progress Mahasiswa PKL</span>
         </a>
@@ -171,120 +174,51 @@ require_once("koneksi.php");
     </ul>
 
   </aside><!-- End Sidebar-->
-
   <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Selamat Datang</h1>
-    </div><!-- End Page Title -->
-
-    <section class="section dashboard">
-      <div class="">
-
-        <!-- Left side columns -->
-        <div class="">
-          <div class="row">
-
-            <!-- Profile card -->
-            <div class="col-12">
-              <div class="card info-card sales-card">
-
-
-
-                <div class="card-body">
-                  <h5 class="card-title"><?= $_SESSION['nama_lengkap'] ?></h5>
-
-                  <div class="d-flex align-items-center">
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                      <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                      <div class="ps-3">
-                        <h4><?= $_SESSION['level'] ?></h4>
-                        <span class="text-success small pt-1 fw-bold">Aktif</span> <span class="text-muted small pt-2 ps-1">|| NIP : <?= $_SESSION['nimnip'] ?></span>
-
-                      </div>
-                    </a>
-                  </div><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                  </a>
-                </div><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                </a>
-              </div><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              </a>
-            </div><!-- End Profiles Card --><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-
-
-
-              <!-- Data Departemen -->
-            </a>
-            <div class="col-12" id="data-departemen"><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              </a>
-              <div class="card top-selling overflow-auto"><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-
-                </a>
-                <div class="filter"><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                  </a><a class="d-none icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-
-                </div>
-
-                <div class="card-body pb-0">
-                  <h5 class="card-title">Data Departemen</h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-
-                        <td>Mahasiswa</td>
-
-                        <td class="badge rounded-pill bg-info text-dark"><?php echo $rows; ?></td>
-
-                      </tr>
-                      <tr>
-
-                        <td>Dosen</td>
-                        <td class="badge rounded-pill bg-info text-dark"><?php echo $rows1; ?></td>
-
-                      </tr>
-
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Data Departemen -->
-
-          </div>
-        </div><!-- End Left side columns -->
-      </div>
-    </section>
-    <div class="col-lg-12">
-      <div class="card">
+    <!-- Data Mahasiswa -->
+    <div class="col-12">
+      <div class="card recent-sales overflow-auto">
         <div class="card-body">
-          <h5 class="card-title">Data Mahasiswa</h5>
-          <!-- Donut Chart -->
-          <div id="donutChart"></div>
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              new ApexCharts(document.querySelector("#donutChart"), {
-                series: [<?php echo $rows2; ?>, <?php echo $rows3; ?>, <?php echo $rows4; ?>, <?php echo $rows5; ?>, <?php echo $rows6; ?>, <?php echo $rows7; ?>, <?php echo $rows8; ?>],
-                chart: {
-                  height: 350,
-                  type: 'donut',
-                  toolbar: {
-                    show: true
-                  }
-                },
-                labels: ['Aktif', 'Cuti', 'Mangkir', 'DO', 'Undur Diri', 'Lulus', 'Meninggal Dunia'],
-              }).render();
-            });
-          </script>
-          <!-- End Donut Chart -->
-        </div>
-      </div>
-    </div>
+          <h5 class="card-title">Progress Mahasiswa PKL</h5>
+          <table class="table table-borderless datatable">
+            <thead>
+              <tr>
+                <th scope="col">NIM</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Semester</th>
+                <th scope="col">Status</th>
+                <th scope="col">Nilai</th>
+                <th scope="col">Dosen Pembimbing</th>
+                <th scope="col">File</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $query = "SELECT * FROM data_pkl";
+              $result = $koneksi->query($query);
+
+              while ($row = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['nim'] . "</td>";
+                echo "<td>" . $row['nama'] . "</td>";
+                echo "<td>" . $row['semester'] . "</td>";
+                echo "<td>" . $row['status_pkl'] . "</td>";
+                echo "<td>" . $row['nilai_pkl'] . "</td>";
+                echo "<td>" . $row['dosen_pembimbing'] . "</td>";
+                echo "<td>" . $row['upload_file'] . "</td>";
+              }
+              ?>
+
+              <?php
+
+              ?>
+
+
+            </tbody>
+          </table>
+
 
   </main><!-- End #main -->
 
@@ -294,6 +228,10 @@ require_once("koneksi.php");
       © Copyright <strong><span>LomSiap</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
@@ -328,6 +266,7 @@ require_once("koneksi.php");
     <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
     <path id="SvgjsPath1004" d="M0 0 "></path>
   </svg>
+
 
 
   <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
