@@ -120,14 +120,14 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index_dosen.php  ">
+        <a class="nav-link collapsed" href="index_admin.php  ">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data_mahasiswa_dosen.php">
+        <a class="nav-link collapsed" href="data_mahasiswa.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa</span>
         </a>
@@ -139,11 +139,33 @@
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data_mahasiswa_skripsi.php">
+        <a class="nav-link " href="data_mahasiswa_skripsi.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa Skripsi</span>
         </a>
       </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="progress_mahasiswa_irs.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa IRS</span>
+        </a>
+      </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="progress_mahasiswa_khs.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa KHS</span>
+        </a>
+        <li class="nav-item">
+        <a class="nav-link collapsed " href="progress_mahasiswa_skripsi.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa Skripsi</span>
+        </a>
+      </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="progress_mahasiswa_pkl.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Progress Mahasiswa PKL</span>
+        </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="logout.php">
@@ -165,6 +187,7 @@
                       <thead>
                         <tr>
                           <th scope="col">NIM</th>
+                          <th scope="col">Tahun</th>
                           <th scope="col">Nama</th>
                           <th scope="col">Status</th>
                           <th scope="col">Nilai</th>
@@ -179,6 +202,7 @@
                           while ($row = mysqli_fetch_array($result)){
                             echo "<tr>";
                             echo "<td>".$row['nim']."</td>";
+                            echo "<td>".$row['tahun']."</td>";
                             echo "<td>".$row['nama']."</td>";
                             if($row['status'] == "BELUM SKRIPSI"){
                               echo "<td><span class='badge rounded-pill bg-danger'>".$row['status']."</span></td>";
