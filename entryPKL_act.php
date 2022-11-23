@@ -30,7 +30,7 @@ if ($_POST) {
   $dosen_pembimbing = $_POST['dosen_pembimbing'];
   $upload_file = upload();
 
-  $query = "INSERT INTO data_pkl ( nim, semester, status_pkl, nilai_pkl, dosen_pembimbing, upload_file) VALUES ('" . $nim . "', '" . $semester . "', '" . $status_pkl . "', '" . $nilai_pkl . "', '" . $dosen_pembimbing . "', '" . $upload_file . "')";
+  $query = "INSERT INTO data_pkl ( nim, nama, semester, status_pkl, nilai_pkl, dosen_pembimbing, upload_file) VALUES ('" . $nim . "', '" . $nama . "','" . $semester . "', '" . $status_pkl . "', '" . $nilai_pkl . "', '" . $dosen_pembimbing . "', '" . $upload_file . "')";
   $result = $koneksi->query($query);
   if (!$result) {
     die("Could not query the database: <br />" . $koneksi->error);

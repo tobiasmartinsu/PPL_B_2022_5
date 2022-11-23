@@ -35,7 +35,7 @@ if ($_POST) {
   $tanggal_sidang = $_POST['tanggal_sidang'];
   $upload_file = upload();
 
-  $query = "INSERT INTO data_skripsi ( nim, semester, status_skripsi, nilai_skripsi, lama_studi, tanggal_sidang, upload_file) VALUES ('" . $nim . "', '" . $semester . "', '" . $status_skripsi . "', '" . $nilai_skripsi . "', '" . $lama_studi . "', '" . $tanggal_sidang . "', '" . $upload_file . "')";
+  $query = "INSERT INTO data_skripsi ( nim, nama, semester, status_skripsi, nilai_skripsi, lama_studi, tanggal_sidang, upload_file) VALUES ('" . $nim . "', '" . $nama . "', '" . $semester . "', '" . $status_skripsi . "', '" . $nilai_skripsi . "', '" . $lama_studi . "', '" . $tanggal_sidang . "', '" . $upload_file . "')";
   $result = $koneksi->query($query);
   if (!$result) {
     die("Could not query the database: <br />" . $koneksi->error);
