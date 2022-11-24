@@ -3,28 +3,28 @@
 
       <ul class="sidebar-nav" id="sidebar-nav">
           <li class="nav-item">
-              <a href="/index_mahasiswa.php" class="nav-link collapsed">
+              <a href="index_mahasiswa.php" class="nav-link collapsed">
                   <i class="bi bi-person"></i>
                   <span>Profile</span>
               </a>
           </li><!-- End Profile Page Nav -->
           <li class="nav-item">
-              <a href="/EntryKHS.php" class="nav-link collapsed">
+              <a href="EntryKHS.php" class="nav-link collapsed">
                   <i class="bi bi-layout-text-window-reverse"></i><span>Entry KHS</span>
               </a>
           </li><!-- End Tables Nav -->
           <li class="nav-item">
-              <a href="/EntryIRS.php" class="nav-link collapsed">
+              <a href="EntryIRS.php" class="nav-link collapsed">
                   <i class="bi bi-layout-text-window-reverse"></i><span>Entry IRS</span>
               </a>
           </li><!-- End Tables Nav -->
           <li class="nav-item ">
-              <a href="/EntryPKL.php" class="nav-link collapsed">
+              <a href="EntryPKL.php" class="nav-link collapsed">
                   <i class="bi bi-layout-text-window-reverse"></i><span>Entry PKL</span>
               </a>
           </li><!-- End Tables Nav -->
           <li class="nav-item ">
-              <a href="/EntrySkripsi.php" class="nav-link collapsed">
+              <a href="EntrySkripsi.php" class="nav-link collapsed">
                   <i class="bi bi-layout-text-window-reverse"></i><span>Entry Skirpsi</span>
               </a>
           </li><!-- End Tables Nav -->
