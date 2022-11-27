@@ -1,9 +1,20 @@
   <!-- ======= Header ======= -->
 <?php
+// session_start();
+
 include_once('function_foto.php');
+
 ?>
   <?php
-//   session_start();
+$query = 'SELECT * FROM data_mahasiswa WHERE nim="' . $nim . '"';
+$result = $koneksi->query($query);
+
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $foto = $row['foto'];
+  }
+}
+?>
   
   ?>
   <header id="header" class="header fixed-top d-flex align-items-center">

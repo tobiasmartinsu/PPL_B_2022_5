@@ -127,6 +127,12 @@
       </li><!-- End Dashboard Nav -->
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
+                <a class="nav-link collapsed " href="manajemen_akun_mahasiswa.php">
+                    <i class="bi bi-layout-text-window-reverse"></i>
+                    <span>Manajemen Akun Mahasiswa</span>
+                </a>
+            </li><!-- End Tables Nav -->
+      <li class="nav-item">
         <a class="nav-link collapsed" href="data_mahasiswa.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa</span>
