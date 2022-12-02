@@ -1,7 +1,7 @@
 <?php
 
 require_once('koneksi.php');
-require_once('function_foto.php');
+// require_once('function_foto.php');
 
 
 session_start();
@@ -42,11 +42,25 @@ if ($_POST) {
   $kota = $_POST['kota'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
-  $foto = foto();
+  $tmpName = $_FILES['foto']['tmp_name'];
+  $target = "data_foto_user/".basename($_FILES['foto']['name']);
 
+  
 
-  $query = "UPDATE data_mahasiswa SET alamat = '" . $alamat . "', provinsi = '" . $provinsi . "', kota = '" . $kota . "', phone = '" . $phone . "', email = '" . $email . "', foto = '" . $foto . "' WHERE nim = '" . $nim . "'";
+  $query = "UPDATE data_mahasiswa SET alamat = '" . $alamat . "', provinsi = '" . $provinsi . "', kota = '" . $kota . "', phone = '" . $phone . "', email = '" . $email . "'  WHERE nim = '" . $nim . "'";
   $result = $koneksi->query($query);
+
+  
+  if($result){
+
+    if(move_uploaded_file($_FILES['foto']['tmp_name'], $target)){
+      $foto = $_FILES['foto']['name'];  
+      $query = "UPDATE data_mahasiswa SET foto = '$foto' WHERE nim = '" . $nim . "'";
+      // mysqli_query($koneksi, $query);
+      $result = $koneksi->query($query);
+    } 
+  
+  }
 }
 
 ?>
@@ -261,7 +275,7 @@ if ($_POST) {
                     <div class="row mb-3">
                       <label for="nama" class="col-md-4 col-lg-3 col-form-label">Nama Lengkap</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="nama" type="text" class="form-control" id="nama" value="<?= $nama ?>">
+                        <input name="nama" type="text" class="form-control" id="nama" value="<?= $nama ?>" disabled>
                       </div>
                     </div>
 
@@ -269,14 +283,14 @@ if ($_POST) {
                     <div class="row mb-3">
                       <label for="nim" class="col-md-4 col-lg-3 col-form-label">NIM</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="nim" type="text" class="form-control" id="nim" value="<?= $nim ?>">
+                        <input name="nim" type="text" class="form-control" id="nim" value="<?= $nim ?>" disabled>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="angkatan" class="col-md-4 col-lg-3 col-form-label">Angkatan</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="angkatan" type="text" class="form-control" id="angkatan" value="<?= $angkatan ?>">
+                        <input name="angkatan" type="text" class="form-control" id="angkatan" value="<?= $angkatan ?>" disabled >
                       </div>
                     </div>
 
