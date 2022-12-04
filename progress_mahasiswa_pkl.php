@@ -119,32 +119,25 @@ session_start();
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index_admin.php  ">
+        <a class="nav-link collapsed " href="index_departemen.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-      </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-                <a class="nav-link collapsed " href="manajemen_akun_mahasiswa.php">
-                    <i class="bi bi-layout-text-window-reverse"></i>
-                    <span>Manajemen Akun Mahasiswa</span>
-                </a>
-            </li><!-- End Tables Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="data_mahasiswa.php">
+        <a class="nav-link collapsed" href="data_mahasiswa_departemen.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa</span>
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data_mahasiswa_pkl.php">
+        <a class="nav-link collapsed" href="data_mahasiswa_pkl_departemen.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa PKL</span>
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data_mahasiswa_skripsi.php">
+        <a class="nav-link collapsed" href="data_mahasiswa_skripsi_departemen.php">
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Data Mahasiswa Skripsi</span>
         </a>
@@ -160,16 +153,17 @@ session_start();
           <i class="bi bi-layout-text-window-reverse"></i>
           <span>Progress Mahasiswa KHS</span>
         </a>
+      </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed " href="progress_mahasiswa_skripsi.php">
+        <a class="nav-link " href="progress_mahasiswa_pkl.php">
           <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Progress Mahasiswa Skripsi</span>
+          <span>Progress Mahasiswa PKL</span>
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link  " href="progress_mahasiswa_pkl.php">
+        <a class="nav-link collapsed" href="progress_mahasiswa_skripsi.php">
           <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Progress Mahasiswa PKL</span>
+          <span>Progress Mahasiswa Skripsi</span>
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
@@ -179,6 +173,7 @@ session_start();
         </a>
       </li><!-- End Login Page Nav -->
     </ul>
+
   </aside><!-- End Sidebar-->
   <main id="main" class="main">
 
