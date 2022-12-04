@@ -151,29 +151,6 @@
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="progress_mahasiswa_irs.php">
-          <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Progress Mahasiswa IRS</span>
-        </a>
-      </li><!-- End Tables Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="progress_mahasiswa_khs.php">
-          <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Progress Mahasiswa KHS</span>
-        </a>
-        <li class="nav-item">
-        <a class="nav-link collapsed " href="progress_mahasiswa_skripsi.php">
-          <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Progress Mahasiswa Skripsi</span>
-        </a>
-      </li><!-- End Tables Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="progress_mahasiswa_pkl.php">
-          <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Progress Mahasiswa PKL</span>
-        </a>
-      </li><!-- End Tables Nav -->
-      <li class="nav-item">
         <a class="nav-link collapsed" href="logout.php">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>
