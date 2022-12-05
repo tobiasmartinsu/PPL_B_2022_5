@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 02:13 PM
+-- Generation Time: Dec 05, 2022 at 04:48 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -119,8 +119,7 @@ CREATE TABLE `data_irs` (
 --
 
 INSERT INTO `data_irs` (`nim`, `nama`, `semester`, `sks_semester`, `sks_kumulatif`, `upload_file`) VALUES
-('24060120140040', 'Tobias Martin Suena', '1', '18', '18', ''),
-('24060120140040', 'Tobias Martin Suena', '2', '21', '39', ''),
+('24060120140040', 'Tobias Martin Suena', '1', '18', '18', 'IRS.pdf'),
 ('24060120140049', 'Angelica Debby Frandina', '1', '18', '18', '');
 
 -- --------------------------------------------------------
@@ -145,6 +144,8 @@ CREATE TABLE `data_khs` (
 --
 
 INSERT INTO `data_khs` (`nim`, `nama`, `semester`, `sks_semester`, `sks_kumulatif`, `ip_semester`, `ip_kumulatif`, `upload_file`) VALUES
+('24060120140040', 'Tobias Martin Suena', '1', '21', '21', '3.5', '3.5', 0x4952532e706466),
+('24060120140040', 'TOBIAS MARTIN SUENA', '2', '18', '18', '3.5', '3.5', 0x30312e20486173696c2050656e67756a69616e202831292e706466),
 ('24060120140049', 'Angelica Debby Frandina', '1', '21', '21', '3.5', '3.5', '');
 
 -- --------------------------------------------------------
@@ -178,8 +179,8 @@ INSERT INTO `data_mahasiswa` (`nim`, `foto`, `nama`, `angkatan`, `status`, `alam
 ('24060119140145', '', 'FARAH TISTI PARANPARA', 2020, 'AKTIF', '', '', '', '', '', 12),
 ('24060120120002', '', 'JASON AL HILAL SABDA DEWA', 2020, 'AKTIF', '', '', '', '', '', 14),
 ('24060120120030', '', 'ZARA ZETIRA PUTI', 2020, 'AKTIF', '', '', '', '', '', 50),
-('24060120140040', 'Tobias Martin Suena.jpg', 'Tobias Martin Suena', 2020, 'AKTIF', 'Jl. Rasamala B2/17', 'Jawa Tengah', 'Kota Semarang', '081909338354', 'tobiasmartin05@students.undip.ac.id', 9),
-('24060120140049', 'Angelica Debby Frandina.jpeg', 'Angelica Debby Frandina', 2020, 'AKTIF', 'Jl. Cimanuk VI', 'Jawa Tengah', 'Demak', '081909338354332', 'debbyfrandina@student.undip.ac.id', 10),
+('24060120140040', 'martin.jpg', 'TOBIAS MARTIN SUENA', 2020, 'AKTIF', 'Jl. Rasamala B2/17. Beringin Indah', 'Jawa Tengah', 'Kota Semarang', '081909338355', 'tobiasmartin05@gmail.com', 15),
+('24060120140049', 'debby.jpeg', 'ANGELICA DEBBY FRANDINA', 2020, 'AKTIF', 'Jl. Cimanuk V', 'Jawa Tengah', 'Kota Semarang', '081909338855', 'debbyfrandina@gmail.com', 16),
 ('24060120140057', '', 'ALIFFIO FADHIL MUHAMMAD NOOR', 2020, 'AKTIF', '', '', '', '', '', 53),
 ('24060120140078', '', 'MUHAMAD SULTAN JODI PERWIRA', 2020, 'AKTIF', '', '', '', '', '', 52),
 ('24060121140096', '', 'BRIANANDO GARNEDA LIANDRA', 2021, 'AKTIF', '', '', '', '', '', 43),
@@ -442,6 +443,7 @@ CREATE TABLE `data_pkl` (
 --
 
 INSERT INTO `data_pkl` (`nim`, `nama`, `semester`, `status_pkl`, `nilai_pkl`, `dosen_pembimbing`, `upload_file`) VALUES
+('24060120140040', 'Tobias Martin Suena', '6', 'LULUS', 'A', 'Drs. Eko Adi Sarwoko, M.Kom.', 0x4952532e706466),
 ('24060120140049', 'Angelica Debby Frandina', '6', 'LULUS', 'A', 'Drs. Eko Adi Sarwoko, M.Kom.', '');
 
 -- --------------------------------------------------------
@@ -466,6 +468,7 @@ CREATE TABLE `data_skripsi` (
 --
 
 INSERT INTO `data_skripsi` (`nim`, `nama`, `semester`, `status_skripsi`, `nilai_skripsi`, `lama_studi`, `tanggal_sidang`, `upload_file`) VALUES
+('24060120140040', 'Tobias Martin Suena', '10', 'LULUS', 'A', '10', '12/12/2019', 0x4952532e706466),
 ('24060120140049', 'Angelica Debby Frandina', '10', 'LULUS', 'A', '10', '12/12/2019', '');
 
 -- --------------------------------------------------------
@@ -479,21 +482,22 @@ CREATE TABLE `tuser` (
   `nimnip` varchar(20) NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `level` enum('Admin','Departemen','Dosen','Mahasiswa') NOT NULL
+  `level` enum('Admin','Departemen','Dosen','Mahasiswa') NOT NULL,
+  `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tuser`
 --
 
-INSERT INTO `tuser` (`id`, `nimnip`, `nama_lengkap`, `password`, `level`) VALUES
-(1, '198611050214011685', 'Benny Nugroho', '202cb962ac59075b964b07152d234b70', 'Admin'),
-(2, '197007051997021001', 'Priyo Sidik Sasongko, S.Si., M.Kom.', '202cb962ac59075b964b07152d234b70', 'Dosen'),
-(3, '199406050220071043', 'Anang Ardiyanto', '202cb962ac59075b964b07152d234b70', 'Departemen'),
-(9, '24060120140040', 'Tobias Martin Suena', '202cb962ac59075b964b07152d234b70', 'Mahasiswa'),
-(10, '24060120140049', 'Angelica Debby Frandina', '202cb962ac59075b964b07152d234b70', 'Mahasiswa'),
-(12, '24060119140145', 'FARAH TISTI PARANPARA', '202cb962ac59075b964b07152d234b70', 'Mahasiswa'),
-(14, '24060120120002', 'JASON AL HILAL SABDA DEWA', '202cb962ac59075b964b07152d234b70', 'Mahasiswa');
+INSERT INTO `tuser` (`id`, `nimnip`, `nama_lengkap`, `password`, `level`, `foto`) VALUES
+(1, '198611050214011685', 'Benny Nugroho', '202cb962ac59075b964b07152d234b70', 'Admin', ''),
+(2, '197007051997021001', 'Priyo Sidik Sasongko, S.Si., M.Kom.', '202cb962ac59075b964b07152d234b70', 'Dosen', ''),
+(3, '199406050220071043', 'Anang Ardiyanto', '202cb962ac59075b964b07152d234b70', 'Departemen', ''),
+(12, '24060119140145', 'FARAH TISTI PARANPARA', '202cb962ac59075b964b07152d234b70', 'Mahasiswa', ''),
+(14, '24060120120002', 'JASON AL HILAL SABDA DEWA', '202cb962ac59075b964b07152d234b70', 'Mahasiswa', ''),
+(15, '24060120140040', 'TOBIAS MARTIN SUENA', '202cb962ac59075b964b07152d234b70', 'Mahasiswa', ''),
+(16, '24060120140049', 'ANGELICA DEBBY FRANDINA', '202cb962ac59075b964b07152d234b70', 'Mahasiswa', '');
 
 -- --------------------------------------------------------
 
@@ -597,7 +601,7 @@ ALTER TABLE `verifikasi`
 -- AUTO_INCREMENT for table `tuser`
 --
 ALTER TABLE `tuser`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `verifikasi`
